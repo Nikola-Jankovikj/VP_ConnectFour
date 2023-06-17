@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ConnectFour
 {
-    public partial class Form1 : Form
+    public partial class GameForm : Form
     {
-        public Form1()
+        public GameForm()
         {
             InitializeComponent();
+        }
+
+        private void GameForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
