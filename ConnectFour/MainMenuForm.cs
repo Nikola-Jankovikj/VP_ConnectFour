@@ -12,10 +12,7 @@ namespace ConnectFour
 {
     public partial class MainMenuForm : Form
     {
-        /// <TODO>
-        ///  WHEN GAME IS FINISHED THIS SHOULD CLOSE!
-        /// <TODO>
-
+       
         public MainMenuForm()
         {
             InitializeComponent();
@@ -33,9 +30,10 @@ namespace ConnectFour
 
         private void startBtn_Click(object sender, EventArgs e)
         {
-            GameForm gameForm = new GameForm();
-            gameForm.Show();
             this.Hide();
+            var GameForm = new GameForm(true, 15, 8, 10);
+            GameForm.Closed += (s, args) => this.Close();
+            GameForm.Show();
         }
     }
 }

@@ -32,8 +32,8 @@ namespace ConnectFour
             this.components = new System.ComponentModel.Container();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsslTotalTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsslTurnTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslPlayerName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslTurnTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,17 +56,22 @@ namespace ConnectFour
             this.tsslTotalTime.Size = new System.Drawing.Size(118, 17);
             this.tsslTotalTime.Text = "toolStripStatusLabel1";
             // 
+            // tsslPlayerName
+            // 
+            this.tsslPlayerName.Name = "tsslPlayerName";
+            this.tsslPlayerName.Size = new System.Drawing.Size(118, 17);
+            this.tsslPlayerName.Text = "toolStripStatusLabel1";
+            // 
             // tsslTurnTime
             // 
             this.tsslTurnTime.Name = "tsslTurnTime";
             this.tsslTurnTime.Size = new System.Drawing.Size(118, 17);
             this.tsslTurnTime.Text = "toolStripStatusLabel1";
             // 
-            // tsslPlayerName
+            // timer1
             // 
-            this.tsslPlayerName.Name = "tsslPlayerName";
-            this.tsslPlayerName.Size = new System.Drawing.Size(118, 17);
-            this.tsslPlayerName.Text = "toolStripStatusLabel1";
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // GameForm
             // 
@@ -74,9 +79,12 @@ namespace ConnectFour
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "GameForm";
             this.Text = "Connect Four - Game";
             this.Load += new System.EventHandler(this.GameForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.GameForm_Paint);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GameForm_MouseClick);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

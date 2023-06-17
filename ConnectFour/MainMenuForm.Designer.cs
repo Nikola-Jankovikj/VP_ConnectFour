@@ -31,8 +31,8 @@
             this.welcomeLbl = new System.Windows.Forms.Label();
             this.startBtn = new System.Windows.Forms.Button();
             this.gbPickOpponent = new System.Windows.Forms.GroupBox();
-            this.rbPlayAgainstFriend = new System.Windows.Forms.RadioButton();
             this.rbPlayAgainstComputer = new System.Windows.Forms.RadioButton();
+            this.rbPlayAgainstFriend = new System.Windows.Forms.RadioButton();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.lblNumRows = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             // welcomeLbl
             // 
             this.welcomeLbl.AutoSize = true;
-            this.welcomeLbl.Location = new System.Drawing.Point(295, 99);
+            this.welcomeLbl.Location = new System.Drawing.Point(291, 86);
             this.welcomeLbl.Name = "welcomeLbl";
             this.welcomeLbl.Size = new System.Drawing.Size(134, 13);
             this.welcomeLbl.TabIndex = 0;
@@ -75,17 +75,6 @@
             this.gbPickOpponent.TabStop = false;
             this.gbPickOpponent.Text = "Pick Opponent";
             // 
-            // rbPlayAgainstFriend
-            // 
-            this.rbPlayAgainstFriend.AutoSize = true;
-            this.rbPlayAgainstFriend.Location = new System.Drawing.Point(7, 20);
-            this.rbPlayAgainstFriend.Name = "rbPlayAgainstFriend";
-            this.rbPlayAgainstFriend.Size = new System.Drawing.Size(115, 17);
-            this.rbPlayAgainstFriend.TabIndex = 0;
-            this.rbPlayAgainstFriend.TabStop = true;
-            this.rbPlayAgainstFriend.Text = "Play Against Friend";
-            this.rbPlayAgainstFriend.UseVisualStyleBackColor = true;
-            // 
             // rbPlayAgainstComputer
             // 
             this.rbPlayAgainstComputer.AutoSize = true;
@@ -96,6 +85,17 @@
             this.rbPlayAgainstComputer.TabStop = true;
             this.rbPlayAgainstComputer.Text = "Play Against Computer";
             this.rbPlayAgainstComputer.UseVisualStyleBackColor = true;
+            // 
+            // rbPlayAgainstFriend
+            // 
+            this.rbPlayAgainstFriend.AutoSize = true;
+            this.rbPlayAgainstFriend.Location = new System.Drawing.Point(7, 20);
+            this.rbPlayAgainstFriend.Name = "rbPlayAgainstFriend";
+            this.rbPlayAgainstFriend.Size = new System.Drawing.Size(115, 17);
+            this.rbPlayAgainstFriend.TabIndex = 0;
+            this.rbPlayAgainstFriend.TabStop = true;
+            this.rbPlayAgainstFriend.Text = "Play Against Friend";
+            this.rbPlayAgainstFriend.UseVisualStyleBackColor = true;
             // 
             // numericUpDown1
             // 
