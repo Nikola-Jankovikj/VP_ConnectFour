@@ -21,3 +21,15 @@ C:\Users\Todor\Desktop\finki\SEMESTAR IV\vizuelno programiranje\ConnectFour\Conn
 C:\Users\Todor\Desktop\finki\SEMESTAR IV\vizuelno programiranje\ConnectFour\ConnectFour\obj\Debug\ConnectFour.csproj.CoreCompileInputs.cache
 C:\Users\Todor\Desktop\finki\SEMESTAR IV\vizuelno programiranje\ConnectFour\ConnectFour\obj\Debug\ConnectFour.exe
 C:\Users\Todor\Desktop\finki\SEMESTAR IV\vizuelno programiranje\ConnectFour\ConnectFour\obj\Debug\ConnectFour.pdb
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\bin\Debug\ConnectFour.exe.config
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\bin\Debug\ConnectFour.exe
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\bin\Debug\ConnectFour.pdb
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\obj\Debug\ConnectFour.csproj.AssemblyReference.cache
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\obj\Debug\ConnectFour.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\obj\Debug\ConnectFour.GameForm.resources
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\obj\Debug\ConnectFour.MainMenuForm.resources
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\obj\Debug\ConnectFour.Properties.Resources.resources
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\obj\Debug\ConnectFour.csproj.GenerateResource.cache
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\obj\Debug\ConnectFour.csproj.CoreCompileInputs.cache
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\obj\Debug\ConnectFour.exe
+C:\Users\Tea\Desktop\VP_ConnectFour\VP_ConnectFour\ConnectFour\obj\Debug\ConnectFour.pdb

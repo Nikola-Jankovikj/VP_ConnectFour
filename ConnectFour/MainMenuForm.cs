@@ -31,7 +31,7 @@ namespace ConnectFour
         private void startBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var GameForm = new GameForm(true, 15, 8, 10);
+            var GameForm = new GameForm(true, 15, 8, 5);
             GameForm.Closed += (s, args) => this.Close();
             GameForm.Show();
         }
