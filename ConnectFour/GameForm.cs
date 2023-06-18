@@ -26,8 +26,8 @@ namespace ConnectFour
             this.withBot = withBot;
             this.rows = rows;
             this.columns = cols;
-            this.Width = cols * 50;
-            this.Height = rows * 50 + 20;
+            this.Width = cols*(2 * Circle.Radius + 2 * Scene.DistanceBetweenCircles) + 15;
+            this.Height = rows*(2 * Circle.Radius + 2 * Scene.DistanceBetweenCircles) + 60;
             scene = new Scene(rows, cols, withBot);
             DoubleBuffered = true;
             this.turnTimeLimit = turnTimeLimit;
@@ -63,6 +63,7 @@ namespace ConnectFour
         {
             if (e.Button == MouseButtons.Left && scene.AddCircle(e.Location))
             {
+                Invalidate();
                 if (scene.DidPlayerWin())
                 {
                     ShowPlayerWonDialog();
@@ -74,8 +75,7 @@ namespace ConnectFour
                 else if (hasTurnTimeLimit)
                 {
                     turnTimeTicks = turnTimeLimit;
-                }
-                Invalidate();
+                }   
             }
         }
 
