@@ -32,10 +32,11 @@ namespace ConnectFour
             this.components = new System.ComponentModel.Container();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsslTotalTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsslPlayerName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsslTurnTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tsslEmptySpace = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslTurnTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslPlayerName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,28 +59,32 @@ namespace ConnectFour
             this.tsslTotalTime.Size = new System.Drawing.Size(118, 17);
             this.tsslTotalTime.Text = "toolStripStatusLabel1";
             // 
+            // tsslEmptySpace
+            // 
+            this.tsslEmptySpace.Name = "tsslEmptySpace";
+            this.tsslEmptySpace.Size = new System.Drawing.Size(518, 17);
+            this.tsslEmptySpace.Spring = true;
+            // 
+            // tsslTurnTime
+            // 
+            this.tsslTurnTime.Name = "tsslTurnTime";
+            this.tsslTurnTime.Size = new System.Drawing.Size(0, 17);
+            // 
             // tsslPlayerName
             // 
             this.tsslPlayerName.Name = "tsslPlayerName";
             this.tsslPlayerName.Size = new System.Drawing.Size(118, 17);
             this.tsslPlayerName.Text = "toolStripStatusLabel1";
             // 
-            // tsslTurnTime
-            // 
-            this.tsslTurnTime.Name = "tsslTurnTime";
-            this.tsslTurnTime.Size = new System.Drawing.Size(118, 17);
-            this.tsslTurnTime.Text = "toolStripStatusLabel1";
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // tsslEmptySpace
+            // timer2
             // 
-            this.tsslEmptySpace.Name = "tsslEmptySpace";
-            this.tsslEmptySpace.Size = new System.Drawing.Size(400, 17);
-            this.tsslEmptySpace.Spring = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // GameForm
             // 
@@ -108,5 +113,6 @@ namespace ConnectFour
         private System.Windows.Forms.ToolStripStatusLabel tsslPlayerName;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripStatusLabel tsslEmptySpace;
+        private System.Windows.Forms.Timer timer2;
     }
 }
