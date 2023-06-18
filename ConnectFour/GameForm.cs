@@ -42,6 +42,7 @@ namespace ConnectFour
             }
             else
             {
+                timer2.Start();
                 hasTurnTimeLimit = true;
                 tsslTurnTime.Text = turnTimeTicks.ToString();
             }
@@ -74,9 +75,18 @@ namespace ConnectFour
                 }
                 else if (hasTurnTimeLimit)
                 {
-                    turnTimeTicks = turnTimeLimit;
-                }   
+                    ResetTurnTimer();
+                }
+                tsslPlayerName.Text = calculatePlayer();
             }
+        }
+
+        private void ResetTurnTimer()
+        {
+            timer2.Stop();
+            timer2.Start();
+            turnTimeTicks = turnTimeLimit;
+            tsslTurnTime.Text = turnTimeTicks.ToString();
         }
 
         private void ShowGameFinishedWithDrawDialog()
@@ -135,17 +145,26 @@ namespace ConnectFour
         private void timer1_Tick(object sender, EventArgs e)
         {
             totalTimeTicks++;
+            tsslTotalTime.Text = formatTimeToText(totalTimeTicks);
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
             if (hasTurnTimeLimit)
             {
                 turnTimeTicks--;
                 if (turnTimeTicks == 0)
                 {
                     scene.turnTimeEnded();
+                    tsslPlayerName.Text = calculatePlayer();
                     turnTimeTicks = turnTimeLimit;
                 }
                 tsslTurnTime.Text = turnTimeTicks.ToString();
             }
-            tsslTotalTime.Text = formatTimeToText(totalTimeTicks);
+            else
+            {
+                tsslTurnTime.Text = String.Empty;
+            }
         }
 
         private string formatTimeToText(int time)
@@ -159,5 +178,7 @@ namespace ConnectFour
         {
 
         }
+
+        
     }
 }
