@@ -9,17 +9,21 @@ namespace ConnectFour
 {
     public class Circle
     {
+        public Point Center { get; set; }
         public static int Radius { get; set; } = 20;
         public Color Color { get; set; }
 
-        public Circle()
+        public Circle(Point center)
         {
             this.Color = Color.White;
+            Center = center;
         }
 
         public void Draw(Graphics g)
         {
-
+            Brush brush = new SolidBrush(Color);
+            g.FillEllipse(brush, Center.X -  Radius, Center.Y - Radius, 2*Radius, 2*Radius);
+            brush.Dispose();
         }
 
     }
