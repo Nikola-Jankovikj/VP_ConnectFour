@@ -45,3 +45,18 @@
     
     # Office Temp Files
     ~$*
+*.vsidx
+/.vs/ConnectFour/v17/.suo
+/ConnectFour/bin/Debug/ConnectFour.exe
+/ConnectFour/bin/Debug/ConnectFour.exe.config
+/ConnectFour/bin/Debug/ConnectFour.pdb
+/ConnectFour/obj/Debug/ConnectFour.csproj.AssemblyReference.cache
+/ConnectFour/obj/Debug/ConnectFour.csproj.CoreCompileInputs.cache
+/ConnectFour/obj/Debug/ConnectFour.csproj.FileListAbsolute.txt
+/ConnectFour/obj/Debug/ConnectFour.csproj.GenerateResource.cache
+/ConnectFour/obj/Debug/ConnectFour.csproj.SuggestedBindingRedirects.cache
+/ConnectFour/obj/Debug/ConnectFour.exe
+/ConnectFour/obj/Debug/ConnectFour.GameForm.resources
+/ConnectFour/obj/Debug/ConnectFour.MainMenuForm.resources
+/ConnectFour/obj/Debug/ConnectFour.pdb
+/ConnectFour/obj/Debug/ConnectFour.Properties.Resources.resources
