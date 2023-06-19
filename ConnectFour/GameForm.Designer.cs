@@ -42,6 +42,7 @@ namespace ConnectFour
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.RoyalBlue;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslTotalTime,
             this.tsslEmptySpace,
@@ -55,14 +56,19 @@ namespace ConnectFour
             // 
             // tsslTotalTime
             // 
+            this.tsslTotalTime.BackColor = System.Drawing.Color.Gold;
+            this.tsslTotalTime.Font = new System.Drawing.Font("Unispace", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsslTotalTime.ForeColor = System.Drawing.Color.Crimson;
             this.tsslTotalTime.Name = "tsslTotalTime";
-            this.tsslTotalTime.Size = new System.Drawing.Size(118, 17);
+            this.tsslTotalTime.Size = new System.Drawing.Size(154, 17);
             this.tsslTotalTime.Text = "toolStripStatusLabel1";
             // 
             // tsslEmptySpace
             // 
+            this.tsslEmptySpace.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tsslEmptySpace.Font = new System.Drawing.Font("Unispace", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslEmptySpace.Name = "tsslEmptySpace";
-            this.tsslEmptySpace.Size = new System.Drawing.Size(518, 17);
+            this.tsslEmptySpace.Size = new System.Drawing.Size(446, 17);
             this.tsslEmptySpace.Spring = true;
             // 
             // tsslTurnTime
@@ -72,8 +78,11 @@ namespace ConnectFour
             // 
             // tsslPlayerName
             // 
+            this.tsslPlayerName.BackColor = System.Drawing.Color.Gold;
+            this.tsslPlayerName.Font = new System.Drawing.Font("Unispace", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsslPlayerName.ForeColor = System.Drawing.Color.Crimson;
             this.tsslPlayerName.Name = "tsslPlayerName";
-            this.tsslPlayerName.Size = new System.Drawing.Size(118, 17);
+            this.tsslPlayerName.Size = new System.Drawing.Size(154, 17);
             this.tsslPlayerName.Text = "toolStripStatusLabel1";
             // 
             // timer1

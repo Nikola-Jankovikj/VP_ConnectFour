@@ -57,7 +57,7 @@ namespace ConnectFour
                 row++;
             }
 
-            Circles[row,col].Color = IsPlayerOne ? Color.Red : Color.Yellow;
+            Circles[row,col].Color = IsPlayerOne ? Color.Crimson : Color.Gold;
             LastCircleRow = row;
             LastCircleCol = col;
 
@@ -68,7 +68,7 @@ namespace ConnectFour
 
         public void Draw(Graphics g)
         {
-            Brush b = new SolidBrush(Color.Blue);
+            Brush b = new SolidBrush(Color.DodgerBlue);
             g.FillRectangle(b, 0, 0, Cols * (2 * Circle.Radius + 2 * DistanceBetweenCircles), Rows * (2 * Circle.Radius + 2 * DistanceBetweenCircles));
             b.Dispose();
 
