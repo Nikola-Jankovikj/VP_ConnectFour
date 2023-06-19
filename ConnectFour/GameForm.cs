@@ -44,10 +44,11 @@ namespace ConnectFour
             {
                 timer2.Start();
                 hasTurnTimeLimit = true;
-                tsslTurnTime.Text = turnTimeTicks.ToString();
+                formatTurnTimeText();
             }
             tsslEmptySpace.Text = String.Empty;
             tsslPlayerName.Text = calculatePlayer();
+            changeStyle();
         }
 
         private void GameForm_Load(object sender, EventArgs e)
@@ -67,10 +68,14 @@ namespace ConnectFour
                 Invalidate();
                 if (scene.DidPlayerWin())
                 {
+                    timer1.Stop();
+                    timer2.Stop();
                     ShowPlayerWonDialog();
                 }
                 else if (scene.IsTableFull())
                 {
+                    timer1.Stop();
+                    timer2.Stop();
                     ShowGameFinishedWithDrawDialog();
                 }
                 else if (hasTurnTimeLimit)
@@ -78,6 +83,7 @@ namespace ConnectFour
                     ResetTurnTimer();
                 }
                 tsslPlayerName.Text = calculatePlayer();
+                changeStyle();
             }
         }
 
@@ -86,7 +92,7 @@ namespace ConnectFour
             timer2.Stop();
             timer2.Start();
             turnTimeTicks = turnTimeLimit;
-            tsslTurnTime.Text = turnTimeTicks.ToString();
+            formatTurnTimeText();
         }
 
         private void ShowGameFinishedWithDrawDialog()
@@ -142,6 +148,28 @@ namespace ConnectFour
             return player;
         }
 
+        private void changeStyle()
+        {
+            if (calculatePlayer() == "Player 1")
+            {
+                tsslPlayerName.ForeColor = Color.Crimson;
+                tsslPlayerName.BackColor = Color.Gold;
+                tsslTotalTime.ForeColor = Color.Crimson;
+                tsslTotalTime.BackColor = Color.Gold;
+                tsslTurnTime.ForeColor = Color.Crimson;
+                tsslTurnTime.BackColor = Color.Gold;
+            }
+            else
+            {
+                tsslPlayerName.BackColor = Color.Crimson;
+                tsslPlayerName.ForeColor = Color.Gold;
+                tsslTotalTime.BackColor = Color.Crimson;
+                tsslTotalTime.ForeColor = Color.Gold;
+                tsslTurnTime.BackColor = Color.Crimson;
+                tsslTurnTime.ForeColor = Color.Gold;
+            }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             totalTimeTicks++;
@@ -157,9 +185,10 @@ namespace ConnectFour
                 {
                     scene.turnTimeEnded();
                     tsslPlayerName.Text = calculatePlayer();
+                    changeStyle();
                     turnTimeTicks = turnTimeLimit;
                 }
-                tsslTurnTime.Text = turnTimeTicks.ToString();
+                formatTurnTimeText();
             }
             else
             {
@@ -174,9 +203,10 @@ namespace ConnectFour
             return String.Format("{0}:{1}", minutes.ToString("D2"), seconds.ToString("D2"));
         }
 
-        private void GameForm_MouseMove(object sender, MouseEventArgs e)
+        private void formatTurnTimeText()
         {
-
+            tsslTurnTime.Text = "Turn timer: " + turnTimeTicks.ToString() + "s  | ";
+            tsslTurnTime.Font = new Font("Unispace", 8);
         }
 
         

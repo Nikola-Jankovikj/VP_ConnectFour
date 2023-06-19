@@ -132,7 +132,7 @@
             this.nudRows.Size = new System.Drawing.Size(120, 21);
             this.nudRows.TabIndex = 3;
             this.nudRows.Value = new decimal(new int[] {
-            4,
+            6,
             0,
             0,
             0});
@@ -157,7 +157,7 @@
             this.nudCols.Size = new System.Drawing.Size(120, 21);
             this.nudCols.TabIndex = 4;
             this.nudCols.Value = new decimal(new int[] {
-            5,
+            7,
             0,
             0,
             0});
