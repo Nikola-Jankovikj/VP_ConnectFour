@@ -32,7 +32,7 @@ public class MiniMaxAlgorithm
     private TranspositionTable transpositionTable = new TranspositionTable();
 
     //Constructor
-    public MiniMaxAlgorithm(int depth = 10, bool debug = false, bool useCache = true)
+    public MiniMaxAlgorithm(int depth = 6, bool debug = false, bool useCache = true)
     {
         DEPTH = depth;
         DebugMode = debug;

@@ -216,18 +216,26 @@ namespace ConnectFour
             // second diagonal
             connected = 0;
 
-            if (LastCircleRow < Cols - LastCircleCol - 1)
+            /* if (LastCircleRow < Cols - LastCircleCol - 1)
+             {
+                 i = 0;
+                 j = LastCircleCol + LastCircleRow;
+             }
+             else
+             {
+                 i = LastCircleRow - Cols + LastCircleCol + 1;
+                 j = Cols - 1;
+             }*/
+            i = LastCircleRow;
+            j = LastCircleCol;
+
+            while (i < Rows - 1 && j > 0)
             {
-                i = 0;
-                j = LastCircleCol + LastCircleRow;
-            }
-            else
-            {
-                i = LastCircleRow - Cols + LastCircleCol + 1;
-                j = Cols - 1;
+                i++;
+                j--;
             }
 
-            while (i < Rows && j > 0)
+            while (i >= 0 && j < Cols)
             {
                 if (Circles[i, j].Color == currentColor)
                 {
@@ -244,8 +252,8 @@ namespace ConnectFour
                     return true;
                 }
 
-                i++;
-                j--;
+                i--;
+                j++;
             }
 
             return false;
