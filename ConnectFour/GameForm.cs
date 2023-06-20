@@ -20,11 +20,13 @@ namespace ConnectFour
         int columns;
         bool withBot;
         bool hasTurnTimeLimit;
+        bool shouldShowMainMenuWhenFinished;
         MainMenuForm parent;
         public GameForm(bool withBot, int turnTimeLimit, int rows, int cols, MainMenuForm parent)
         {
             InitializeComponent();
             this.parent = parent;
+            shouldShowMainMenuWhenFinished = false;
             this.withBot = withBot;
             this.rows = rows;
             this.columns = cols;
@@ -108,7 +110,7 @@ namespace ConnectFour
             }
             else if (dialogResult == DialogResult.No)
             {
-                parent.Close();
+                shouldShowMainMenuWhenFinished = true;
                 this.Close();
             }
         }
@@ -125,7 +127,7 @@ namespace ConnectFour
             }
             else if (dialogResult == DialogResult.No)
             {
-                parent.Show();
+                shouldShowMainMenuWhenFinished = true;
                 this.Close();
             }
         }
@@ -213,6 +215,16 @@ namespace ConnectFour
             tsslTurnTime.Font = new Font("Unispace", 8);
         }
 
-        
+        private void GameForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (shouldShowMainMenuWhenFinished)
+            {
+                parent.Show();
+            }
+            else
+            {
+                parent.Close();
+            }
+        }
     }
 }

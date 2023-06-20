@@ -57,18 +57,18 @@ namespace ConnectFour
             // tsslTotalTime
             // 
             this.tsslTotalTime.BackColor = System.Drawing.Color.Gold;
-            this.tsslTotalTime.Font = new System.Drawing.Font("Unispace", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsslTotalTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslTotalTime.ForeColor = System.Drawing.Color.Crimson;
             this.tsslTotalTime.Name = "tsslTotalTime";
-            this.tsslTotalTime.Size = new System.Drawing.Size(154, 17);
+            this.tsslTotalTime.Size = new System.Drawing.Size(128, 17);
             this.tsslTotalTime.Text = "toolStripStatusLabel1";
             // 
             // tsslEmptySpace
             // 
             this.tsslEmptySpace.BackColor = System.Drawing.Color.RoyalBlue;
-            this.tsslEmptySpace.Font = new System.Drawing.Font("Unispace", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsslEmptySpace.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslEmptySpace.Name = "tsslEmptySpace";
-            this.tsslEmptySpace.Size = new System.Drawing.Size(446, 17);
+            this.tsslEmptySpace.Size = new System.Drawing.Size(529, 17);
             this.tsslEmptySpace.Spring = true;
             // 
             // tsslTurnTime
@@ -79,10 +79,10 @@ namespace ConnectFour
             // tsslPlayerName
             // 
             this.tsslPlayerName.BackColor = System.Drawing.Color.Gold;
-            this.tsslPlayerName.Font = new System.Drawing.Font("Unispace", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsslPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslPlayerName.ForeColor = System.Drawing.Color.Crimson;
             this.tsslPlayerName.Name = "tsslPlayerName";
-            this.tsslPlayerName.Size = new System.Drawing.Size(154, 17);
+            this.tsslPlayerName.Size = new System.Drawing.Size(128, 17);
             this.tsslPlayerName.Text = "toolStripStatusLabel1";
             // 
             // timer1
@@ -104,6 +104,7 @@ namespace ConnectFour
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "GameForm";
             this.Text = "Connect Four - Game";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameForm_FormClosing);
             this.Load += new System.EventHandler(this.GameForm_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.GameForm_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GameForm_MouseClick);
