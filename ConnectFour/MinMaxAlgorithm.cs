@@ -77,9 +77,9 @@ public class MiniMaxAlgorithm
         int score = 0;
 
         //Check horizontal
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < board.NUM_ROW; i++)
         {
-            for (int j = 0; j < 4; j++)
+            for (int j = 0; j < (int)board.NUM_COL-3; j++)
             {
                 int player1 = 0, player2 = 0;
 
@@ -94,9 +94,9 @@ public class MiniMaxAlgorithm
         }
 
         //Check vertical
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < board.NUM_ROW - 3; i++)
         {
-            for (int j = 0; j < 7; j++)
+            for (int j = 0; j < board.NUM_COL; j++)
             {
                 int player1 = 0, player2 = 0;
 
@@ -111,9 +111,9 @@ public class MiniMaxAlgorithm
         }
 
         //Check diagonal (top left to bottom right)
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < board.NUM_ROW - 3; i++)
         {
-            for (int j = 0; j < 4; j++)
+            for (int j = 0; j < (int)board.NUM_COL - 3; j++)
             {
                 int player1 = 0, player2 = 0;
 
@@ -128,9 +128,9 @@ public class MiniMaxAlgorithm
         }
 
         //Check diagonal (top right to bottom left)
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < board.NUM_ROW-3; i++)
         {
-            for (int j = 3; j < 7; j++)
+            for (int j = 3; j < board.NUM_COL; j++)
             {
                 int player1 = 0, player2 = 0;
 
