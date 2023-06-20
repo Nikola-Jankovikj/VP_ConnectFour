@@ -34,8 +34,8 @@ namespace ConnectFour
         {
             GetValues();
             this.Hide();
-            var GameForm = new GameForm(WithBot, TurnTimeLimit, Rows, Cols);
-            GameForm.Closed += (s, args) => this.Close();
+            var GameForm = new GameForm(WithBot, TurnTimeLimit, Rows, Cols, this);
+           // GameForm.Closed += (s, args) => this.Close();
             GameForm.Show();
         }
 
