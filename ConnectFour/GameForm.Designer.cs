@@ -68,7 +68,7 @@ namespace ConnectFour
             this.tsslEmptySpace.BackColor = System.Drawing.Color.RoyalBlue;
             this.tsslEmptySpace.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslEmptySpace.Name = "tsslEmptySpace";
-            this.tsslEmptySpace.Size = new System.Drawing.Size(529, 17);
+            this.tsslEmptySpace.Size = new System.Drawing.Size(498, 17);
             this.tsslEmptySpace.Spring = true;
             // 
             // tsslTurnTime

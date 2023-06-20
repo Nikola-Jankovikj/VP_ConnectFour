@@ -35,16 +35,17 @@ namespace ConnectFour
             GetValues();
             this.Hide();
             var GameForm = new GameForm(WithBot, TurnTimeLimit, Rows, Cols, this);
-           // GameForm.Closed += (s, args) => this.Close();
             GameForm.Show();
         }
 
         private void GetValues()
         {
             if (rbPlayAgainstComputer.Checked) { WithBot = true; }
+            else { WithBot = false; }
             Rows = (int)nudRows.Value;
             Cols = (int)nudCols.Value;
             if (cbHasTurnTimeLimit.Checked) { TurnTimeLimit = (int) nudTurnTimeLimit.Value; }
+            else { TurnTimeLimit = 0; }
         }
     }
 }
