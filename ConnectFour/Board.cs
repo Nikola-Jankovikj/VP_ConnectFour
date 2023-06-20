@@ -8,18 +8,20 @@ namespace ConnectFour
 {
     public class Board
     {
-        public int[,] board = new int[6, 7];
+        public int[,] board = new int[MainMenuForm.Rows, MainMenuForm.Cols];
         public int currentPlayerTurn = 1;
         public int moves = 0;
+        public int rows = MainMenuForm.Rows;
+        public int columns = MainMenuForm.Cols;
 
         public int NUM_COL
         {
-            get => board.GetLength(1);
+            get => columns;
         }
 
         public int NUM_ROW
         {
-            get => board.GetLength(0);
+            get => rows;
         }
 
         public Board() { }
@@ -35,24 +37,26 @@ namespace ConnectFour
             moves = b.moves;
         }
 
-        public Board(int[,] board, int currentPlayerTurn, int moves)
+        public Board(int[,] board, int currentPlayerTurn, int moves, int rows, int cols)
         {
+            this.rows = rows;
+            this.columns = cols;
             this.board = board;
             this.currentPlayerTurn = currentPlayerTurn;
             this.moves = moves;
         }
 
-        public bool IsFull() => moves == 42;
+        public bool IsFull() => moves == rows * columns;
 
         public void PrintBoard(bool shouldClear = false)
         {
             if (shouldClear) Console.Clear();
 
             Console.WriteLine(" 1 2 3 4 5 6 7");
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < rows; i++)
             {
                 Console.Write("|");
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     if (board[i, j] == 0) Console.Write(" |");
                     else if (board[i, j] == 1)
@@ -103,10 +107,10 @@ namespace ConnectFour
 
         public bool MakeMove(int column, int player)
         {
-            if (column < 1 || column > 7) return false;
+            if (column < 1 || column > NUM_COL) return false;
             if (board[0, column - 1] != 0) return false;
 
-            for (int i = 5; i >= 0; i--)
+            for (int i = NUM_ROW-1; i >= 0; i--)
             {
                 if (board[i, column - 1] == 0)
                 {
@@ -129,9 +133,9 @@ namespace ConnectFour
         public int WinningMove(Board board)
         {
             //Check Horizontal
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < NUM_ROW; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < (int)NUM_COL - 3; j++)
                 {
                     if (board.board[i, j] != 0 &&
                         board.board[i, j] == board.board[i, j + 1] &&
@@ -141,9 +145,9 @@ namespace ConnectFour
                 }
             }
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < NUM_ROW; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < (int)NUM_COL - 3; j++)
                 {
                     if (board.board[i, j] != 0 &&
                         board.board[i, j] == board.board[i, j + 1] &&
@@ -154,9 +158,9 @@ namespace ConnectFour
             }
 
             //Check Vertical
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < NUM_ROW - 3; i++)
             {
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < NUM_COL; j++)
                 {
                     if (board.board[i, j] != 0 &&
                         board.board[i, j] == board.board[i + 1, j] &&
@@ -167,9 +171,9 @@ namespace ConnectFour
             }
 
             //Check Diagonal (top left to bottom right)
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < NUM_ROW - 3; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < NUM_COL - 3; j++)
                 {
                     if (board.board[i, j] != 0 &&
                         board.board[i, j] == board.board[i + 1, j + 1] &&
@@ -180,9 +184,9 @@ namespace ConnectFour
             }
 
             //Check Diagonal (top right to bottom left)
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < NUM_ROW - 3; i++)
             {
-                for (int j = 3; j < 7; j++)
+                for (int j = 3; j < NUM_COL; j++)
                 {
                     if (board.board[i, j] != 0 &&
                         board.board[i, j] == board.board[i + 1, j - 1] &&
@@ -204,7 +208,7 @@ namespace ConnectFour
             //if the target can win in the next move, return that move
             //else if the opponent can win in the next move, block that move
 
-            Parallel.For(1, 7, (i, state) =>
+            Parallel.For(1, NUM_COL, (i, state) =>
             {
                 //Loop over both players
                 for (int j = 1; j <= 2; j++)
@@ -229,9 +233,9 @@ namespace ConnectFour
             int returnValue = 0;
 
             //Check Horizontal
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < NUM_ROW; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < NUM_COL - 3; j++)
                 {
                     if (board[i, j] == 0 &&
                         board[i, j + 1] == 0 &&
@@ -242,9 +246,9 @@ namespace ConnectFour
             }
 
             //Check Vertical
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < NUM_ROW - 3; i++)
             {
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < NUM_COL; j++)
                 {
                     if (board[i, j] == 0 &&
                         board[i + 1, j] == 0 &&
@@ -255,9 +259,9 @@ namespace ConnectFour
             }
 
             //Check Diagonal (top left to bottom right)
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < NUM_ROW - 3; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < (int)NUM_COL - 3; j++)
                 {
                     if (board[i, j] == 0 &&
                         board[i + 1, j + 1] == 0 &&
@@ -268,9 +272,9 @@ namespace ConnectFour
             }
 
             //Check Diagonal (top right to bottom left)
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < NUM_ROW - 3; i++)
             {
-                for (int j = 3; j < 7; j++)
+                for (int j = 3; j < NUM_COL; j++)
                 {
                     if (board[i, j] == 0 &&
                         board[i + 1, j - 1] == 0 &&
@@ -288,9 +292,9 @@ namespace ConnectFour
             int returnValue = 0;
 
             //Check Horizontal
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < NUM_ROW; i++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < NUM_COL-2; j++)
                 {
                     if (board[i, j] == 0 &&
                         board[i, j + 1] == 0 &&
@@ -300,9 +304,9 @@ namespace ConnectFour
             }
 
             //Check Vertical
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < (int) NUM_ROW - 2; i++)
             {
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < NUM_COL; j++)
                 {
                     if (board[i, j] == 0 &&
                         board[i + 1, j] == 0 &&
@@ -312,9 +316,9 @@ namespace ConnectFour
             }
 
             //Check Diagonal (top left to bottom right)
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < (int)NUM_ROW - 2; i++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < NUM_COL-2; j++)
                 {
                     if (board[i, j] == 0 &&
                         board[i + 1, j + 1] == 0 &&
@@ -324,9 +328,9 @@ namespace ConnectFour
             }
 
             //Check Diagonal (top right to bottom left)
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < (int)NUM_ROW - 2; i++)
             {
-                for (int j = 2; j < 7; j++)
+                for (int j = 2; j < NUM_COL; j++)
                 {
                     if (board[i, j] == 0 &&
                         board[i + 1, j - 1] == 0 &&

@@ -76,7 +76,7 @@ namespace ConnectFour
 
             if (WithBot && !IsPlayerOne)
             {
-                Board currentBoard = new Board(generateIntMatrix(), 2, moves);
+                Board currentBoard = new Board(generateIntMatrix(), 2, moves, Rows, Cols);
                 col = Computer.GetBestMove(currentBoard).Column - 1;
             }
             else
