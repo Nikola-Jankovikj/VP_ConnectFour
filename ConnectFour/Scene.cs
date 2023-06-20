@@ -17,6 +17,8 @@ namespace ConnectFour
         public bool IsPlayerOne { get; set; }
         public int LastCircleRow { get; set; } = -1;
         public int LastCircleCol { get; set; } = -1;
+        public int moves { get; set; } = 0;
+        public MiniMaxAlgorithm Computer { get; set; }
 
 
 
@@ -39,29 +41,72 @@ namespace ConnectFour
                 }
             }
             this.IsPlayerOne = true;
+            Computer = new MiniMaxAlgorithm();
+        }
+
+
+        private int[,] generateIntMatrix()
+        {
+            int[,] intMatrix = new int[Rows, Cols];
+            for (int i = 0; i < Rows; i++)
+            {
+                for (int j = 0; j < Cols; j++)
+                {
+                    if(Circles[i,j].Color == Color.White)
+                    {
+                        intMatrix[i, j] = 0;
+                    }
+                    else if(Circles[i,j].Color == Color.Crimson)
+                    {
+                        intMatrix[i, j] = 1;
+                    }
+                    else
+                    {
+                        intMatrix[i, j] = 2;
+                    }
+                }
+            }
+
+            return intMatrix;
         }
 
         public bool AddCircle(Point location)
         {
-            int col = location.X / (2 * Circle.Radius + 2 * DistanceBetweenCircles);
+            int col = -1;
 
-            if (Circles[0,col].Color != Color.White)
+            if (WithBot && !IsPlayerOne)
             {
-                return false;
+                Board currentBoard = new Board(generateIntMatrix(), 2, moves);
+                col = Computer.GetBestMove(currentBoard).Column - 1;
+            }
+            else
+            {
+                col = location.X / (2 * Circle.Radius + 2 * DistanceBetweenCircles);
+
+                if (Circles[0, col].Color != Color.White)
+                {
+                    return false;
+                }
             }
 
+            return MakeMove(col);
+        }
+
+        private bool MakeMove(int col)
+        {
             int row = 0;
 
-            while (row+1 < Rows && Circles[row+1,col].Color == Color.White)
+            while (row + 1 < Rows && Circles[row + 1, col].Color == Color.White)
             {
                 row++;
             }
 
-            Circles[row,col].Color = IsPlayerOne ? Color.Crimson : Color.Gold;
+            Circles[row, col].Color = IsPlayerOne ? Color.Crimson : Color.Gold;
             LastCircleRow = row;
             LastCircleCol = col;
 
             IsPlayerOne = !IsPlayerOne;
+            moves++;
 
             return true;
         }
@@ -105,7 +150,7 @@ namespace ConnectFour
 
                 if (connected == 4)
                 {
-                    IsPlayerOne = currentColor == Color.Red;
+                    IsPlayerOne = currentColor == Color.Crimson;
                     return true;
                 }
             }
@@ -126,7 +171,7 @@ namespace ConnectFour
 
                 if (connected == 4)
                 {
-                    IsPlayerOne = currentColor == Color.Red;
+                    IsPlayerOne = currentColor == Color.Crimson;
                     return true;
                 }
             }
@@ -160,7 +205,7 @@ namespace ConnectFour
 
                 if (connected == 4)
                 {
-                    IsPlayerOne = currentColor == Color.Red;
+                    IsPlayerOne = currentColor == Color.Crimson;
                     return true;
                 }
 
@@ -171,18 +216,26 @@ namespace ConnectFour
             // second diagonal
             connected = 0;
 
-            if (LastCircleRow < Cols - LastCircleCol - 1)
+            /* if (LastCircleRow < Cols - LastCircleCol - 1)
+             {
+                 i = 0;
+                 j = LastCircleCol + LastCircleRow;
+             }
+             else
+             {
+                 i = LastCircleRow - Cols + LastCircleCol + 1;
+                 j = Cols - 1;
+             }*/
+            i = LastCircleRow;
+            j = LastCircleCol;
+
+            while (i < Rows - 1 && j > 0)
             {
-                i = 0;
-                j = LastCircleCol + LastCircleRow;
-            }
-            else
-            {
-                i = LastCircleRow - Cols + LastCircleCol + 1;
-                j = Cols - 1;
+                i++;
+                j--;
             }
 
-            while (i < Rows && j > 0)
+            while (i >= 0 && j < Cols)
             {
                 if (Circles[i, j].Color == currentColor)
                 {
@@ -195,12 +248,12 @@ namespace ConnectFour
 
                 if (connected == 4)
                 {
-                    IsPlayerOne = currentColor == Color.Red;
+                    IsPlayerOne = currentColor == Color.Crimson;
                     return true;
                 }
 
-                i++;
-                j--;
+                i--;
+                j++;
             }
 
             return false;
