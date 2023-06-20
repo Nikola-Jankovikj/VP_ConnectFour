@@ -20,9 +20,11 @@ namespace ConnectFour
         int columns;
         bool withBot;
         bool hasTurnTimeLimit;
-        public GameForm(bool withBot, int turnTimeLimit, int rows, int cols)
+        MainMenuForm parent;
+        public GameForm(bool withBot, int turnTimeLimit, int rows, int cols, MainMenuForm parent)
         {
             InitializeComponent();
+            this.parent = parent;
             this.withBot = withBot;
             this.rows = rows;
             this.columns = cols;
@@ -100,12 +102,13 @@ namespace ConnectFour
             DialogResult dialogResult = MessageBox.Show("Would you like to play again?", "Draw", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                GameForm newForm = new GameForm(withBot, turnTimeLimit, rows, columns);
+                GameForm newForm = new GameForm(withBot, turnTimeLimit, rows, columns, parent);
                 newForm.Show();
                 this.Dispose(true);
             }
             else if (dialogResult == DialogResult.No)
             {
+                parent.Close();
                 this.Close();
             }
         }
@@ -116,12 +119,13 @@ namespace ConnectFour
             DialogResult dialogResult = MessageBox.Show("Would you like to play again?", String.Format("{0} wins!", player), MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                GameForm newForm = new GameForm(withBot, turnTimeLimit, rows, columns);
+                GameForm newForm = new GameForm(withBot, turnTimeLimit, rows, columns, parent);
                 newForm.Show();
                 this.Dispose(false);
             }
             else if (dialogResult == DialogResult.No)
             {
+                parent.Show();
                 this.Close();
             }
         }
