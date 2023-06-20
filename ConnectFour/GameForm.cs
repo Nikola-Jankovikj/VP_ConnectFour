@@ -70,24 +70,38 @@ namespace ConnectFour
             if (e.Button == MouseButtons.Left && scene.AddCircle(e.Location))
             {
                 Invalidate();
-                if (scene.DidPlayerWin())
-                {
-                    timer1.Stop();
-                    timer2.Stop();
-                    ShowPlayerWonDialog();
-                }
-                else if (scene.IsTableFull())
-                {
-                    timer1.Stop();
-                    timer2.Stop();
-                    ShowGameFinishedWithDrawDialog();
-                }
-                else if (hasTurnTimeLimit)
-                {
-                    ResetTurnTimer();
-                }
+                CheckWinner();
                 tsslPlayerName.Text = calculatePlayer();
                 changeStyle();
+                if (withBot)
+                {
+                    Invalidate();
+                    scene.AddCircle(new Point(0, 0));
+                    tsslPlayerName.Text = calculatePlayer();
+                    changeStyle();
+                    Invalidate();
+                    CheckWinner();
+                }
+            }
+        }
+
+        private void CheckWinner()
+        {
+            if (scene.DidPlayerWin())
+            {
+                timer1.Stop();
+                timer2.Stop();
+                ShowPlayerWonDialog();
+            }
+            else if (scene.IsTableFull())
+            {
+                timer1.Stop();
+                timer2.Stop();
+                ShowGameFinishedWithDrawDialog();
+            }
+            else if (hasTurnTimeLimit)
+            {
+                ResetTurnTimer();
             }
         }
 
@@ -191,6 +205,12 @@ namespace ConnectFour
                     tsslPlayerName.Text = calculatePlayer();
                     changeStyle();
                     turnTimeTicks = turnTimeLimit;
+                    if (withBot)
+                    {
+                        scene.AddCircle(new Point(0, 0));
+                        Invalidate();
+                        CheckWinner();
+                    }
                 }
                 formatTurnTimeText();
             }
