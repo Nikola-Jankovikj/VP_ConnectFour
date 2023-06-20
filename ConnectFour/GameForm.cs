@@ -76,6 +76,8 @@ namespace ConnectFour
                 if (withBot)
                 {
                     Invalidate();
+                    var t = Task.Delay(1000);
+                    t.Wait();
                     scene.AddCircle(new Point(0, 0));
                     tsslPlayerName.Text = calculatePlayer();
                     changeStyle();
