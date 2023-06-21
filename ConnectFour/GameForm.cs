@@ -20,8 +20,9 @@ namespace ConnectFour
         int columns;
         bool withBot;
         bool hasTurnTimeLimit;
+        bool botIsEasy;
         MainMenuForm parent;
-        public GameForm(bool withBot, int turnTimeLimit, int rows, int cols, MainMenuForm parent)
+        public GameForm(bool withBot, int turnTimeLimit, int rows, int cols, MainMenuForm parent, bool botIsEasy)
         {
             InitializeComponent();
             this.parent = parent;
@@ -31,7 +32,8 @@ namespace ConnectFour
             this.columns = cols;
             this.Width = cols*(2 * Circle.Radius + 2 * Scene.DistanceBetweenCircles) + 15;
             this.Height = rows*(2 * Circle.Radius + 2 * Scene.DistanceBetweenCircles) + 60;
-            scene = new Scene(rows, cols, withBot);
+            this.botIsEasy = botIsEasy;
+            scene = new Scene(rows, cols, withBot, botIsEasy);
             DoubleBuffered = true;
             this.turnTimeLimit = turnTimeLimit;
             timer1.Start();
@@ -120,7 +122,7 @@ namespace ConnectFour
             DialogResult dialogResult = MessageBox.Show("Would you like to play again?", "Draw", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                GameForm newForm = new GameForm(withBot, turnTimeLimit, rows, columns, parent);
+                GameForm newForm = new GameForm(withBot, turnTimeLimit, rows, columns, parent, botIsEasy);
                 newForm.Show();
                 this.Dispose(true);
             }
@@ -136,7 +138,7 @@ namespace ConnectFour
             DialogResult dialogResult = MessageBox.Show("Would you like to play again?", String.Format("{0} wins!", player), MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                GameForm newForm = new GameForm(withBot, turnTimeLimit, rows, columns, parent);
+                GameForm newForm = new GameForm(withBot, turnTimeLimit, rows, columns, parent, botIsEasy);
                 newForm.Show();
                 this.Dispose(false);
             }

@@ -16,6 +16,7 @@ namespace ConnectFour
         public static int Rows { get; set; }
         public static int Cols { get; set; }
         public int TurnTimeLimit { get; set; }
+        public bool BotIsEasy { get; set; }
 
         public MainMenuForm()
         {
@@ -34,18 +35,35 @@ namespace ConnectFour
         {
             GetValues();
             this.Hide();
-            var GameForm = new GameForm(WithBot, TurnTimeLimit, Rows, Cols, this);
+            var GameForm = new GameForm(WithBot, TurnTimeLimit, Rows, Cols, this, BotIsEasy);
             GameForm.Show();
         }
 
         private void GetValues()
         {
-            if (rbPlayAgainstComputer.Checked) { WithBot = true; }
+            if (rbPlayAgainstComputer.Checked) 
+            { 
+                WithBot = true;
+                BotIsEasy = rbEasyBot.Checked;
+            }
             else { WithBot = false; }
             Rows = (int)nudRows.Value;
             Cols = (int)nudCols.Value;
             if (cbHasTurnTimeLimit.Checked) { TurnTimeLimit = (int) nudTurnTimeLimit.Value; }
             else { TurnTimeLimit = 0; }
+        }
+
+        private void rbPlayAgainstComputer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbPlayAgainstComputer.Checked)
+            {
+                rbEasyBot.Enabled = true;
+                rbHardBot.Enabled = true;
+            } else
+            {
+                rbEasyBot.Enabled = false;
+                rbHardBot.Enabled = false;
+            }
         }
     }
 }
