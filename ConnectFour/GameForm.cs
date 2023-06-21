@@ -170,7 +170,7 @@ namespace ConnectFour
 
         private void changeStyle()
         {
-            if (calculatePlayer() == "Player 1")
+            if (!scene.IsPlayerOne)
             {
                 tsslPlayerName.ForeColor = Color.Crimson;
                 tsslPlayerName.BackColor = Color.Gold;
