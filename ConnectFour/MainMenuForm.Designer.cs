@@ -94,7 +94,7 @@
             this.rbPlayAgainstComputer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPlayAgainstComputer.Location = new System.Drawing.Point(7, 43);
             this.rbPlayAgainstComputer.Name = "rbPlayAgainstComputer";
-            this.rbPlayAgainstComputer.Size = new System.Drawing.Size(162, 20);
+            this.rbPlayAgainstComputer.Size = new System.Drawing.Size(161, 20);
             this.rbPlayAgainstComputer.TabIndex = 1;
             this.rbPlayAgainstComputer.TabStop = true;
             this.rbPlayAgainstComputer.Text = "Play Against Computer";
@@ -107,7 +107,7 @@
             this.rbPlayAgainstFriend.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.rbPlayAgainstFriend.Location = new System.Drawing.Point(7, 20);
             this.rbPlayAgainstFriend.Name = "rbPlayAgainstFriend";
-            this.rbPlayAgainstFriend.Size = new System.Drawing.Size(142, 20);
+            this.rbPlayAgainstFriend.Size = new System.Drawing.Size(141, 20);
             this.rbPlayAgainstFriend.TabIndex = 0;
             this.rbPlayAgainstFriend.TabStop = true;
             this.rbPlayAgainstFriend.Text = "Play Against Friend";
@@ -169,7 +169,7 @@
             this.lblNumRows.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumRows.Location = new System.Drawing.Point(6, 31);
             this.lblNumRows.Name = "lblNumRows";
-            this.lblNumRows.Size = new System.Drawing.Size(42, 16);
+            this.lblNumRows.Size = new System.Drawing.Size(41, 16);
             this.lblNumRows.TabIndex = 5;
             this.lblNumRows.Text = "Rows";
             // 
@@ -179,7 +179,7 @@
             this.lblNumColumns.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumColumns.Location = new System.Drawing.Point(139, 31);
             this.lblNumColumns.Name = "lblNumColumns";
-            this.lblNumColumns.Size = new System.Drawing.Size(60, 16);
+            this.lblNumColumns.Size = new System.Drawing.Size(59, 16);
             this.lblNumColumns.TabIndex = 6;
             this.lblNumColumns.Text = "Columns";
             // 
@@ -220,7 +220,7 @@
             this.cbHasTurnTimeLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHasTurnTimeLimit.Location = new System.Drawing.Point(9, 32);
             this.cbHasTurnTimeLimit.Name = "cbHasTurnTimeLimit";
-            this.cbHasTurnTimeLimit.Size = new System.Drawing.Size(108, 20);
+            this.cbHasTurnTimeLimit.Size = new System.Drawing.Size(107, 20);
             this.cbHasTurnTimeLimit.TabIndex = 9;
             this.cbHasTurnTimeLimit.Text = "Enable Timer";
             this.cbHasTurnTimeLimit.UseVisualStyleBackColor = true;
