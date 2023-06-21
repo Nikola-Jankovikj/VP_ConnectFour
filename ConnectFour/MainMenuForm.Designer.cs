@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             this.welcomeLbl = new System.Windows.Forms.Label();
             this.startBtn = new System.Windows.Forms.Button();
             this.gbPickOpponent = new System.Windows.Forms.GroupBox();
@@ -53,18 +54,18 @@
             // 
             this.welcomeLbl.AutoSize = true;
             this.welcomeLbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.welcomeLbl.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeLbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.welcomeLbl.Location = new System.Drawing.Point(68, 29);
             this.welcomeLbl.Name = "welcomeLbl";
-            this.welcomeLbl.Size = new System.Drawing.Size(249, 19);
+            this.welcomeLbl.Size = new System.Drawing.Size(222, 20);
             this.welcomeLbl.TabIndex = 0;
             this.welcomeLbl.Text = "Welcome to Connect Four!";
             // 
             // startBtn
             // 
             this.startBtn.BackColor = System.Drawing.Color.IndianRed;
-            this.startBtn.Font = new System.Drawing.Font("Unispace", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.startBtn.Location = new System.Drawing.Point(55, 367);
             this.startBtn.Name = "startBtn";
@@ -93,7 +94,7 @@
             this.rbPlayAgainstComputer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPlayAgainstComputer.Location = new System.Drawing.Point(7, 43);
             this.rbPlayAgainstComputer.Name = "rbPlayAgainstComputer";
-            this.rbPlayAgainstComputer.Size = new System.Drawing.Size(161, 20);
+            this.rbPlayAgainstComputer.Size = new System.Drawing.Size(162, 20);
             this.rbPlayAgainstComputer.TabIndex = 1;
             this.rbPlayAgainstComputer.TabStop = true;
             this.rbPlayAgainstComputer.Text = "Play Against Computer";
@@ -106,7 +107,7 @@
             this.rbPlayAgainstFriend.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.rbPlayAgainstFriend.Location = new System.Drawing.Point(7, 20);
             this.rbPlayAgainstFriend.Name = "rbPlayAgainstFriend";
-            this.rbPlayAgainstFriend.Size = new System.Drawing.Size(141, 20);
+            this.rbPlayAgainstFriend.Size = new System.Drawing.Size(142, 20);
             this.rbPlayAgainstFriend.TabIndex = 0;
             this.rbPlayAgainstFriend.TabStop = true;
             this.rbPlayAgainstFriend.Text = "Play Against Friend";
@@ -168,7 +169,7 @@
             this.lblNumRows.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumRows.Location = new System.Drawing.Point(6, 31);
             this.lblNumRows.Name = "lblNumRows";
-            this.lblNumRows.Size = new System.Drawing.Size(41, 16);
+            this.lblNumRows.Size = new System.Drawing.Size(42, 16);
             this.lblNumRows.TabIndex = 5;
             this.lblNumRows.Text = "Rows";
             // 
@@ -178,7 +179,7 @@
             this.lblNumColumns.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumColumns.Location = new System.Drawing.Point(139, 31);
             this.lblNumColumns.Name = "lblNumColumns";
-            this.lblNumColumns.Size = new System.Drawing.Size(59, 16);
+            this.lblNumColumns.Size = new System.Drawing.Size(60, 16);
             this.lblNumColumns.TabIndex = 6;
             this.lblNumColumns.Text = "Columns";
             // 
@@ -219,7 +220,7 @@
             this.cbHasTurnTimeLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHasTurnTimeLimit.Location = new System.Drawing.Point(9, 32);
             this.cbHasTurnTimeLimit.Name = "cbHasTurnTimeLimit";
-            this.cbHasTurnTimeLimit.Size = new System.Drawing.Size(107, 20);
+            this.cbHasTurnTimeLimit.Size = new System.Drawing.Size(108, 20);
             this.cbHasTurnTimeLimit.TabIndex = 9;
             this.cbHasTurnTimeLimit.Text = "Enable Timer";
             this.cbHasTurnTimeLimit.UseVisualStyleBackColor = true;
@@ -264,6 +265,7 @@
             this.Controls.Add(this.gbPickOpponent);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.welcomeLbl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenuForm";
             this.Text = "Connect Four - Main Menu";
             this.gbPickOpponent.ResumeLayout(false);

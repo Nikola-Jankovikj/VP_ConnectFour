@@ -30,6 +30,7 @@ namespace ConnectFour
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsslTotalTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslEmptySpace = new System.Windows.Forms.ToolStripStatusLabel();
@@ -68,7 +69,7 @@ namespace ConnectFour
             this.tsslEmptySpace.BackColor = System.Drawing.Color.RoyalBlue;
             this.tsslEmptySpace.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslEmptySpace.Name = "tsslEmptySpace";
-            this.tsslEmptySpace.Size = new System.Drawing.Size(498, 17);
+            this.tsslEmptySpace.Size = new System.Drawing.Size(529, 17);
             this.tsslEmptySpace.Spring = true;
             // 
             // tsslTurnTime
@@ -102,6 +103,7 @@ namespace ConnectFour
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameForm";
             this.Text = "Connect Four - Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameForm_FormClosing);
