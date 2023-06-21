@@ -19,16 +19,14 @@ namespace ConnectFour
         public int LastCircleCol { get; set; } = -1;
         public int moves { get; set; } = 0;
         public MiniMaxAlgorithm Computer { get; set; }
+       
 
-
-
-        public Scene(int rows, int cols, bool withBot)
+        public Scene(int rows, int cols, bool withBot, bool botIsEasy)
         {
             Rows = rows;
             Cols = cols;
             WithBot = withBot;
             this.Circles = new Circle[this.Rows, this.Cols];
-
             int center_x;
             int center_y;
             for (int i = 0; i < Rows; i++)
@@ -41,7 +39,15 @@ namespace ConnectFour
                 }
             }
             this.IsPlayerOne = true;
-            Computer = new MiniMaxAlgorithm();
+            if (botIsEasy)
+            {
+                Computer = new MiniMaxAlgorithm(1);
+            }
+            else
+            {
+                Computer = new MiniMaxAlgorithm(8);
+            }
+            
         }
 
 

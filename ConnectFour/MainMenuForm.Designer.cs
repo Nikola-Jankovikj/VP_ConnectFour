@@ -42,32 +42,36 @@
             this.cbHasTurnTimeLimit = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbDiff = new System.Windows.Forms.GroupBox();
+            this.rbEasyBot = new System.Windows.Forms.RadioButton();
+            this.rbHardBot = new System.Windows.Forms.RadioButton();
             this.gbPickOpponent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCols)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTurnTimeLimit)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.gbDiff.SuspendLayout();
             this.SuspendLayout();
             // 
             // welcomeLbl
             // 
             this.welcomeLbl.AutoSize = true;
             this.welcomeLbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.welcomeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLbl.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeLbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.welcomeLbl.Location = new System.Drawing.Point(68, 29);
+            this.welcomeLbl.Location = new System.Drawing.Point(68, 28);
             this.welcomeLbl.Name = "welcomeLbl";
-            this.welcomeLbl.Size = new System.Drawing.Size(222, 20);
+            this.welcomeLbl.Size = new System.Drawing.Size(249, 19);
             this.welcomeLbl.TabIndex = 0;
             this.welcomeLbl.Text = "Welcome to Connect Four!";
             // 
             // startBtn
             // 
             this.startBtn.BackColor = System.Drawing.Color.IndianRed;
-            this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startBtn.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.startBtn.Location = new System.Drawing.Point(55, 367);
+            this.startBtn.Location = new System.Drawing.Point(55, 362);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(269, 45);
             this.startBtn.TabIndex = 1;
@@ -83,10 +87,10 @@
             this.gbPickOpponent.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gbPickOpponent.Location = new System.Drawing.Point(55, 71);
             this.gbPickOpponent.Name = "gbPickOpponent";
-            this.gbPickOpponent.Size = new System.Drawing.Size(269, 74);
+            this.gbPickOpponent.Size = new System.Drawing.Size(159, 74);
             this.gbPickOpponent.TabIndex = 2;
             this.gbPickOpponent.TabStop = false;
-            this.gbPickOpponent.Text = "Pick Your Opponent";
+            this.gbPickOpponent.Text = "Pick Opponent";
             // 
             // rbPlayAgainstComputer
             // 
@@ -94,11 +98,12 @@
             this.rbPlayAgainstComputer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPlayAgainstComputer.Location = new System.Drawing.Point(7, 43);
             this.rbPlayAgainstComputer.Name = "rbPlayAgainstComputer";
-            this.rbPlayAgainstComputer.Size = new System.Drawing.Size(161, 20);
+            this.rbPlayAgainstComputer.Size = new System.Drawing.Size(100, 20);
             this.rbPlayAgainstComputer.TabIndex = 1;
             this.rbPlayAgainstComputer.TabStop = true;
-            this.rbPlayAgainstComputer.Text = "Play Against Computer";
+            this.rbPlayAgainstComputer.Text = "vs Computer";
             this.rbPlayAgainstComputer.UseVisualStyleBackColor = true;
+            this.rbPlayAgainstComputer.CheckedChanged += new System.EventHandler(this.rbPlayAgainstComputer_CheckedChanged);
             // 
             // rbPlayAgainstFriend
             // 
@@ -107,10 +112,10 @@
             this.rbPlayAgainstFriend.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.rbPlayAgainstFriend.Location = new System.Drawing.Point(7, 20);
             this.rbPlayAgainstFriend.Name = "rbPlayAgainstFriend";
-            this.rbPlayAgainstFriend.Size = new System.Drawing.Size(141, 20);
+            this.rbPlayAgainstFriend.Size = new System.Drawing.Size(80, 20);
             this.rbPlayAgainstFriend.TabIndex = 0;
             this.rbPlayAgainstFriend.TabStop = true;
-            this.rbPlayAgainstFriend.Text = "Play Against Friend";
+            this.rbPlayAgainstFriend.Text = "vs Friend";
             this.rbPlayAgainstFriend.UseVisualStyleBackColor = true;
             // 
             // nudRows
@@ -234,7 +239,7 @@
             this.groupBox1.Controls.Add(this.lblNumColumns);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox1.Location = new System.Drawing.Point(55, 169);
+            this.groupBox1.Location = new System.Drawing.Point(55, 168);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(269, 85);
             this.groupBox1.TabIndex = 10;
@@ -247,19 +252,57 @@
             this.groupBox2.Controls.Add(this.nudTurnTimeLimit);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox2.Location = new System.Drawing.Point(55, 277);
+            this.groupBox2.Location = new System.Drawing.Point(55, 272);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(269, 68);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Enable Time Limited Turns in Seconds";
             // 
+            // gbDiff
+            // 
+            this.gbDiff.Controls.Add(this.rbHardBot);
+            this.gbDiff.Controls.Add(this.rbEasyBot);
+            this.gbDiff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDiff.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.gbDiff.Location = new System.Drawing.Point(220, 71);
+            this.gbDiff.Name = "gbDiff";
+            this.gbDiff.Size = new System.Drawing.Size(104, 74);
+            this.gbDiff.TabIndex = 12;
+            this.gbDiff.TabStop = false;
+            this.gbDiff.Text = "Difficulty";
+            // 
+            // rbEasyBot
+            // 
+            this.rbEasyBot.AutoSize = true;
+            this.rbEasyBot.Checked = true;
+            this.rbEasyBot.Enabled = false;
+            this.rbEasyBot.Location = new System.Drawing.Point(6, 21);
+            this.rbEasyBot.Name = "rbEasyBot";
+            this.rbEasyBot.Size = new System.Drawing.Size(56, 20);
+            this.rbEasyBot.TabIndex = 0;
+            this.rbEasyBot.TabStop = true;
+            this.rbEasyBot.Text = "Easy";
+            this.rbEasyBot.UseVisualStyleBackColor = true;
+            // 
+            // rbHardBot
+            // 
+            this.rbHardBot.AutoSize = true;
+            this.rbHardBot.Enabled = false;
+            this.rbHardBot.Location = new System.Drawing.Point(6, 43);
+            this.rbHardBot.Name = "rbHardBot";
+            this.rbHardBot.Size = new System.Drawing.Size(55, 20);
+            this.rbHardBot.TabIndex = 1;
+            this.rbHardBot.Text = "Hard";
+            this.rbHardBot.UseVisualStyleBackColor = true;
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(379, 436);
+            this.ClientSize = new System.Drawing.Size(379, 433);
+            this.Controls.Add(this.gbDiff);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbPickOpponent);
@@ -277,6 +320,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.gbDiff.ResumeLayout(false);
+            this.gbDiff.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,6 +342,9 @@
         private System.Windows.Forms.CheckBox cbHasTurnTimeLimit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbDiff;
+        private System.Windows.Forms.RadioButton rbHardBot;
+        private System.Windows.Forms.RadioButton rbEasyBot;
     }
 }
 
