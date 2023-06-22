@@ -78,6 +78,8 @@ namespace ConnectFour
 
         public bool AddCircle(Point location)
         {
+            removePreviousHover();
+
             int col = -1;
 
             if (WithBot && !IsPlayerOne)
@@ -222,16 +224,6 @@ namespace ConnectFour
             // second diagonal
             connected = 0;
 
-            /* if (LastCircleRow < Cols - LastCircleCol - 1)
-             {
-                 i = 0;
-                 j = LastCircleCol + LastCircleRow;
-             }
-             else
-             {
-                 i = LastCircleRow - Cols + LastCircleCol + 1;
-                 j = Cols - 1;
-             }*/
             i = LastCircleRow;
             j = LastCircleCol;
 
@@ -272,7 +264,7 @@ namespace ConnectFour
             {
                 for (int j = 0; j < Cols; j++)
                 {
-                    if (Circles[i,j].Color == Color.White)
+                    if (Circles[i,j].Color == Color.White || Circles[i, j].Color == Color.LightSalmon || Circles[i, j].Color == Color.NavajoWhite)
                     {
                         return false;
                     }
@@ -287,5 +279,52 @@ namespace ConnectFour
             IsPlayerOne = !IsPlayerOne;
         }
 
+        internal void MarkInHovered(Point location)
+        {
+            removePreviousHover();
+
+            int col = -1;
+
+            if (!WithBot || IsPlayerOne)
+            {
+                col = location.X / (2 * Circle.Radius + 2 * DistanceBetweenCircles);
+
+                int totalWidth = Cols * (2 * Circle.Radius + 2 * DistanceBetweenCircles);
+                int totalHeight = Rows * (2 * Circle.Radius + 2 * DistanceBetweenCircles);
+
+                if (location.X <= 0 || location.Y <= 0 || location.X >= totalWidth || location.Y >= totalHeight)
+                {
+                    return;
+                }
+
+                if (Circles[0, col].Color != Color.White)
+                {
+                    return;
+                }
+
+                int row = 0;
+
+                while (row + 1 < Rows && Circles[row + 1, col].Color == Color.White)
+                {
+                    row++;
+                }
+
+                Circles[row, col].Color = IsPlayerOne ? Color.LightSalmon : Color.NavajoWhite;
+            }
+        }
+
+        public void removePreviousHover()
+        {
+            for (int i = 0; i < Rows; i++)
+            {
+                for (int j = 0; j < Cols; j++)
+                {
+                    if (Circles[i, j].Color == Color.LightSalmon || Circles[i, j].Color == Color.NavajoWhite)
+                    {
+                        Circles[i, j].Color = Color.White;
+                    }
+                }
+            }
+        }
     }
 }
