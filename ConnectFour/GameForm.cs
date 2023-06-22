@@ -247,5 +247,11 @@ namespace ConnectFour
         {
             parent.Show();
         }
+
+        private void GameForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            scene.MarkInHovered(e.Location);
+            Invalidate();
+        }
     }
 }

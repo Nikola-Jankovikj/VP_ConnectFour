@@ -44,14 +44,16 @@ namespace ConnectFour
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslTotalTime,
             this.tsslEmptySpace,
             this.tsslTurnTime,
             this.tsslPlayerName});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 531);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1067, 23);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -61,7 +63,7 @@ namespace ConnectFour
             this.tsslTotalTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslTotalTime.ForeColor = System.Drawing.Color.Crimson;
             this.tsslTotalTime.Name = "tsslTotalTime";
-            this.tsslTotalTime.Size = new System.Drawing.Size(128, 17);
+            this.tsslTotalTime.Size = new System.Drawing.Size(164, 17);
             this.tsslTotalTime.Text = "toolStripStatusLabel1";
             // 
             // tsslEmptySpace
@@ -69,7 +71,7 @@ namespace ConnectFour
             this.tsslEmptySpace.BackColor = System.Drawing.Color.RoyalBlue;
             this.tsslEmptySpace.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslEmptySpace.Name = "tsslEmptySpace";
-            this.tsslEmptySpace.Size = new System.Drawing.Size(529, 17);
+            this.tsslEmptySpace.Size = new System.Drawing.Size(719, 17);
             this.tsslEmptySpace.Spring = true;
             // 
             // tsslTurnTime
@@ -83,7 +85,7 @@ namespace ConnectFour
             this.tsslPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslPlayerName.ForeColor = System.Drawing.Color.Crimson;
             this.tsslPlayerName.Name = "tsslPlayerName";
-            this.tsslPlayerName.Size = new System.Drawing.Size(128, 17);
+            this.tsslPlayerName.Size = new System.Drawing.Size(164, 17);
             this.tsslPlayerName.Text = "toolStripStatusLabel1";
             // 
             // timer1
@@ -98,18 +100,20 @@ namespace ConnectFour
             // 
             // GameForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GameForm";
             this.Text = "Connect Four - Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameForm_FormClosing);
             this.Load += new System.EventHandler(this.GameForm_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.GameForm_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GameForm_MouseClick);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GameForm_MouseMove);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
