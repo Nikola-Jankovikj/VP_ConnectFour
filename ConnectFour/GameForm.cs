@@ -72,7 +72,7 @@ namespace ConnectFour
             if (e.Button == MouseButtons.Left && scene.AddCircle(e.Location))
             {
                 Invalidate();
-                CheckWinner();
+                if (CheckWinner()) { return; }
                 tsslPlayerName.Text = calculatePlayer();
                 changeStyle();
                 if (withBot)
@@ -89,24 +89,28 @@ namespace ConnectFour
             }
         }
 
-        private void CheckWinner()
+        private bool CheckWinner()
         {
             if (scene.DidPlayerWin())
             {
                 timer1.Stop();
                 timer2.Stop();
                 ShowPlayerWonDialog();
+                return true;
             }
             else if (scene.IsTableFull())
             {
                 timer1.Stop();
                 timer2.Stop();
                 ShowGameFinishedWithDrawDialog();
+                return true;
             }
             else if (hasTurnTimeLimit)
             {
                 ResetTurnTimer();
+                return false;
             }
+            return false;
         }
 
         private void ResetTurnTimer()

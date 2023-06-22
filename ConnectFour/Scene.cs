@@ -264,7 +264,7 @@ namespace ConnectFour
             {
                 for (int j = 0; j < Cols; j++)
                 {
-                    if (Circles[i,j].Color == Color.White || Circles[i, j].Color == Color.LightSalmon || Circles[i, j].Color == Color.NavajoWhite)
+                    if (Circles[i,j].Color == Color.White || Circles[i, j].Color == Color.LightPink || Circles[i, j].Color == Color.PaleGoldenrod)
                     {
                         return false;
                     }
@@ -309,7 +309,7 @@ namespace ConnectFour
                     row++;
                 }
 
-                Circles[row, col].Color = IsPlayerOne ? Color.LightSalmon : Color.NavajoWhite;
+                Circles[row, col].Color = IsPlayerOne ? Color.LightPink : Color.PaleGoldenrod;
             }
         }
 
@@ -319,7 +319,7 @@ namespace ConnectFour
             {
                 for (int j = 0; j < Cols; j++)
                 {
-                    if (Circles[i, j].Color == Color.LightSalmon || Circles[i, j].Color == Color.NavajoWhite)
+                    if (Circles[i, j].Color == Color.LightPink || Circles[i, j].Color == Color.PaleGoldenrod)
                     {
                         Circles[i, j].Color = Color.White;
                     }
