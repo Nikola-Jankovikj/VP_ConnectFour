@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,6 +65,24 @@ namespace ConnectFour
                 rbEasyBot.Enabled = false;
                 rbHardBot.Enabled = false;
             }
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            string filePath = "../../help.txt";
+            string fileContents = "";
+
+            try
+            {
+                fileContents = File.ReadAllText(filePath);
+            }
+            catch (IOException exception)
+            {
+                Console.WriteLine("An error occurred while reading the file:");
+                Console.WriteLine(exception.Message);
+            }
+
+            MessageBox.Show(fileContents, String.Format("How to Play?"), MessageBoxButtons.OK);
         }
     }
 }
