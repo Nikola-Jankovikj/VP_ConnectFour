@@ -43,8 +43,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gbDiff = new System.Windows.Forms.GroupBox();
-            this.rbEasyBot = new System.Windows.Forms.RadioButton();
             this.rbHardBot = new System.Windows.Forms.RadioButton();
+            this.rbEasyBot = new System.Windows.Forms.RadioButton();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.gbPickOpponent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCols)).BeginInit();
@@ -60,7 +61,7 @@
             this.welcomeLbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.welcomeLbl.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeLbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.welcomeLbl.Location = new System.Drawing.Point(68, 28);
+            this.welcomeLbl.Location = new System.Drawing.Point(69, 38);
             this.welcomeLbl.Name = "welcomeLbl";
             this.welcomeLbl.Size = new System.Drawing.Size(249, 19);
             this.welcomeLbl.TabIndex = 0;
@@ -69,9 +70,10 @@
             // startBtn
             // 
             this.startBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.startBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.startBtn.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.startBtn.Location = new System.Drawing.Point(55, 362);
+            this.startBtn.Location = new System.Drawing.Point(56, 372);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(269, 45);
             this.startBtn.TabIndex = 1;
@@ -85,7 +87,7 @@
             this.gbPickOpponent.Controls.Add(this.rbPlayAgainstFriend);
             this.gbPickOpponent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPickOpponent.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.gbPickOpponent.Location = new System.Drawing.Point(55, 71);
+            this.gbPickOpponent.Location = new System.Drawing.Point(56, 78);
             this.gbPickOpponent.Name = "gbPickOpponent";
             this.gbPickOpponent.Size = new System.Drawing.Size(159, 74);
             this.gbPickOpponent.TabIndex = 2;
@@ -239,7 +241,7 @@
             this.groupBox1.Controls.Add(this.lblNumColumns);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox1.Location = new System.Drawing.Point(55, 168);
+            this.groupBox1.Location = new System.Drawing.Point(56, 175);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(269, 85);
             this.groupBox1.TabIndex = 10;
@@ -252,7 +254,7 @@
             this.groupBox2.Controls.Add(this.nudTurnTimeLimit);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox2.Location = new System.Drawing.Point(55, 272);
+            this.groupBox2.Location = new System.Drawing.Point(56, 286);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(269, 68);
             this.groupBox2.TabIndex = 11;
@@ -265,12 +267,23 @@
             this.gbDiff.Controls.Add(this.rbEasyBot);
             this.gbDiff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDiff.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.gbDiff.Location = new System.Drawing.Point(220, 71);
+            this.gbDiff.Location = new System.Drawing.Point(221, 78);
             this.gbDiff.Name = "gbDiff";
             this.gbDiff.Size = new System.Drawing.Size(104, 74);
             this.gbDiff.TabIndex = 12;
             this.gbDiff.TabStop = false;
             this.gbDiff.Text = "Difficulty";
+            // 
+            // rbHardBot
+            // 
+            this.rbHardBot.AutoSize = true;
+            this.rbHardBot.Enabled = false;
+            this.rbHardBot.Location = new System.Drawing.Point(6, 43);
+            this.rbHardBot.Name = "rbHardBot";
+            this.rbHardBot.Size = new System.Drawing.Size(55, 20);
+            this.rbHardBot.TabIndex = 1;
+            this.rbHardBot.Text = "Hard";
+            this.rbHardBot.UseVisualStyleBackColor = true;
             // 
             // rbEasyBot
             // 
@@ -285,23 +298,27 @@
             this.rbEasyBot.Text = "Easy";
             this.rbEasyBot.UseVisualStyleBackColor = true;
             // 
-            // rbHardBot
+            // btnHelp
             // 
-            this.rbHardBot.AutoSize = true;
-            this.rbHardBot.Enabled = false;
-            this.rbHardBot.Location = new System.Drawing.Point(6, 43);
-            this.rbHardBot.Name = "rbHardBot";
-            this.rbHardBot.Size = new System.Drawing.Size(55, 20);
-            this.rbHardBot.TabIndex = 1;
-            this.rbHardBot.Text = "Hard";
-            this.rbHardBot.UseVisualStyleBackColor = true;
+            this.btnHelp.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnHelp.Cursor = System.Windows.Forms.Cursors.Help;
+            this.btnHelp.Font = new System.Drawing.Font("Unispace", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.ForeColor = System.Drawing.Color.IndianRed;
+            this.btnHelp.Location = new System.Drawing.Point(3, 1);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(25, 24);
+            this.btnHelp.TabIndex = 13;
+            this.btnHelp.Text = "?";
+            this.btnHelp.UseVisualStyleBackColor = false;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(379, 433);
+            this.ClientSize = new System.Drawing.Size(379, 444);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.gbDiff);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -345,6 +362,7 @@
         private System.Windows.Forms.GroupBox gbDiff;
         private System.Windows.Forms.RadioButton rbHardBot;
         private System.Windows.Forms.RadioButton rbEasyBot;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
 

@@ -1,0 +1,22 @@
+Here's a simple guide with instructions on how to play the game Connect Four.
+
+Overview: 
+Connect Four is a two-player strategy game played on a grid of rows and columns. The goal is to be the first player to connect four of your own colored circles in a row, either vertically, horizontally, or diagonally.
+
+Gameplay: 
+The game always begins with the player using the red circles. Players take turns dropping one circle at a time into any of the columns in the grid. The circles will occupy the lowest available empty space in the chosen column.
+
+Connecting Four: 
+The objective is to connect four of your own colored circles in a row, either horizontally, vertically, or diagonally. The row can be formed in any direction: up and down, side to side, or diagonally. The first player to achieve this wins the game.
+
+Alternate Turns: 
+Players take turns placing one circle at a time until the grid is completely filled or until one player connects four circles in a row. If all spaces are filled without a winner, the game is a draw. If a player successfully connects four of their colored circles, they win the game!
+
+Strategy Tips: 
+Here are a few tips to improve your gameplay:
+Pay attention to your opponent's moves to block potential winning moves.
+Try to create multiple possible winning moves to increase your chances of winning.
+Focus on creating horizontal or vertical connections rather than relying solely on diagonal ones.
+Control the center column as it provides more opportunities for different connections.
+
+Remember, Connect Four is a game that requires both strategic planning and adaptability. Enjoy the game and have fun!
