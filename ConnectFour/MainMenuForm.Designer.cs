@@ -152,7 +152,7 @@
             this.nudCols.ForeColor = System.Drawing.Color.IndianRed;
             this.nudCols.Location = new System.Drawing.Point(142, 50);
             this.nudCols.Maximum = new decimal(new int[] {
-            10,
+            9,
             0,
             0,
             0});
