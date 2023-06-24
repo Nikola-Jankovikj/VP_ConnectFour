@@ -77,14 +77,15 @@ namespace ConnectFour
                 changeStyle();
                 if (withBot)
                 {
-                    Invalidate();
+                    tsslTurnTime.Text = "";
+                    //Invalidate();
                     var t = Task.Delay(1000);
                     t.Wait();
                     scene.AddCircle(new Point(0, 0));
-                    tsslPlayerName.Text = calculatePlayer();
-                    changeStyle();
                     Invalidate();
                     CheckWinner();
+                    tsslPlayerName.Text = calculatePlayer();
+                    changeStyle();
                 }
             }
         }
@@ -215,9 +216,14 @@ namespace ConnectFour
                     turnTimeTicks = turnTimeLimit;
                     if (withBot)
                     {
+                        tsslTurnTime.Text = "";
+                        var t = Task.Delay(1000);
+                        t.Wait();
                         scene.AddCircle(new Point(0, 0));
                         Invalidate();
                         CheckWinner();
+                        tsslPlayerName.Text = calculatePlayer();
+                        changeStyle();
                     }
                 }
                 formatTurnTimeText();
