@@ -66,7 +66,7 @@ namespace ConnectFour
         {
             try
             {
-                using (StreamReader sr = new StreamReader("cache.txt"))
+                using (StreamReader sr = new StreamReader("../../cache.txt"))
                 {
                     string line = "";
                     while ((line = sr.ReadLine()) != null)

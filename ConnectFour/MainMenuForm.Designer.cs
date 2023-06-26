@@ -59,11 +59,11 @@
             // 
             this.welcomeLbl.AutoSize = true;
             this.welcomeLbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.welcomeLbl.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLbl.Font = new System.Drawing.Font("Bahnschrift SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeLbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.welcomeLbl.Location = new System.Drawing.Point(69, 38);
+            this.welcomeLbl.Location = new System.Drawing.Point(60, 34);
             this.welcomeLbl.Name = "welcomeLbl";
-            this.welcomeLbl.Size = new System.Drawing.Size(249, 19);
+            this.welcomeLbl.Size = new System.Drawing.Size(258, 25);
             this.welcomeLbl.TabIndex = 0;
             this.welcomeLbl.Text = "Welcome to Connect Four!";
             // 
@@ -71,7 +71,7 @@
             // 
             this.startBtn.BackColor = System.Drawing.Color.IndianRed;
             this.startBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.startBtn.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startBtn.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.startBtn.Location = new System.Drawing.Point(56, 372);
             this.startBtn.Name = "startBtn";
@@ -152,7 +152,7 @@
             this.nudCols.ForeColor = System.Drawing.Color.IndianRed;
             this.nudCols.Location = new System.Drawing.Point(142, 50);
             this.nudCols.Maximum = new decimal(new int[] {
-            10,
+            9,
             0,
             0,
             0});
@@ -302,7 +302,7 @@
             // 
             this.btnHelp.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnHelp.Cursor = System.Windows.Forms.Cursors.Help;
-            this.btnHelp.Font = new System.Drawing.Font("Unispace", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHelp.ForeColor = System.Drawing.Color.IndianRed;
             this.btnHelp.Location = new System.Drawing.Point(3, 1);
             this.btnHelp.Name = "btnHelp";

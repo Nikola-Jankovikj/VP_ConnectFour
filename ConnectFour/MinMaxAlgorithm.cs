@@ -175,11 +175,11 @@ public class MiniMaxAlgorithm
             return Evaluate(board);
         }
 
-        // ReturnMove quickMove = GetQuickMove(board);
-        // if (quickMove.Column != -1)
-        // {
-        //     return quickMove.Score;
-        // }
+        /*ReturnMove quickMove = GetQuickMove(board);
+        if (quickMove.Column != -1)
+        {
+            return quickMove.Score;
+        }*/
 
         int bestScore = maximizingPlayer ? int.MinValue : int.MaxValue;
 
@@ -270,8 +270,8 @@ public class MiniMaxAlgorithm
 
         ReturnMove returnMove = new ReturnMove(bestMove, bestScore, iterations, transpositionTable.Collisions);
 
-        // if (UseCache) Task.Run(() => MoveCache.AddToCache(board, returnMove));
-        // transpositionTable.Reset();
+        if (UseCache) Task.Run(() => MoveCache.AddToCache(board, returnMove));
+        transpositionTable.Reset();
 
         return returnMove;
     }

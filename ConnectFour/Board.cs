@@ -48,36 +48,6 @@ namespace ConnectFour
 
         public bool IsFull() => moves == rows * columns;
 
-        public void PrintBoard(bool shouldClear = false)
-        {
-            if (shouldClear) Console.Clear();
-
-            Console.WriteLine(" 1 2 3 4 5 6 7");
-            for (int i = 0; i < rows; i++)
-            {
-                Console.Write("|");
-                for (int j = 0; j < columns; j++)
-                {
-                    if (board[i, j] == 0) Console.Write(" |");
-                    else if (board[i, j] == 1)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("X");
-                        Console.ResetColor();
-                        Console.Write("|");
-                    }
-                    else if (board[i, j] == 2)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.Write("O");
-                        Console.ResetColor();
-                        Console.Write("|");
-                    }
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine("---------------");
-        }
 
         //Returns the board as a 2d array
         public List<List<int>> GetBoard()
