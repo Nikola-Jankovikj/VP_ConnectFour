@@ -25,22 +25,21 @@ namespace ConnectFour
         public GameForm(bool withBot, int turnTimeLimit, int rows, int cols, MainMenuForm parent, bool botIsEasy)
         {
             InitializeComponent();
-            this.parent = parent;
 
             this.withBot = withBot;
+            this.turnTimeLimit = turnTimeLimit;            
             this.rows = rows;
             this.columns = cols;
             this.Width = cols*(2 * Circle.Radius + 2 * Scene.DistanceBetweenCircles) + 15;
             this.Height = rows*(2 * Circle.Radius + 2 * Scene.DistanceBetweenCircles) + 60;
+            this.parent = parent;
             this.botIsEasy = botIsEasy;
             scene = new Scene(rows, cols, withBot, botIsEasy);
             DoubleBuffered = true;
-            this.turnTimeLimit = turnTimeLimit;
-            timer1.Start();
             totalTimeTicks = 0;
             turnTimeTicks = turnTimeLimit;
+            timer1.Start();
             Invalidate();
-            tsslTotalTime.Text = "00:00";
             if (turnTimeLimit == 0)
             {
                 hasTurnTimeLimit = false;
@@ -49,23 +48,20 @@ namespace ConnectFour
             {
                 timer2.Start();
                 hasTurnTimeLimit = true;
-                formatTurnTimeText();
+                FormatTurnTimeText();
             }
             tsslEmptySpace.Text = String.Empty;
-            tsslPlayerName.Text = calculatePlayer();
-            formatDefaultText();
-            changeStyle();
+            tsslPlayerName.Text = CalculatePlayer();
+            FormatDefaultText();
+            ChangeStyle();
         }
 
-        private void GameForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void GameForm_Paint(object sender, PaintEventArgs e)
         {
             scene.Draw(e.Graphics);
         }
+
 
         private void GameForm_MouseClick(object sender, MouseEventArgs e)
         {
@@ -73,22 +69,22 @@ namespace ConnectFour
             {
                 Invalidate();
                 if (CheckWinner()) { return; }
-                tsslPlayerName.Text = calculatePlayer();
-                changeStyle();
+                tsslPlayerName.Text = CalculatePlayer();
+                ChangeStyle();
                 if (withBot)
                 {
                     tsslTurnTime.Text = "";
-                    //Invalidate();
                     var t = Task.Delay(1000);
                     t.Wait();
                     scene.AddCircle(new Point(0, 0));
                     Invalidate();
                     CheckWinner();
-                    tsslPlayerName.Text = calculatePlayer();
-                    changeStyle();
+                    tsslPlayerName.Text = CalculatePlayer();
+                    ChangeStyle();
                 }
             }
         }
+
 
         private bool CheckWinner()
         {
@@ -114,13 +110,15 @@ namespace ConnectFour
             return false;
         }
 
+
         private void ResetTurnTimer()
         {
             timer2.Stop();
             timer2.Start();
             turnTimeTicks = turnTimeLimit;
-            formatTurnTimeText();
+            FormatTurnTimeText();
         }
+
 
         private void ShowGameFinishedWithDrawDialog()
         {
@@ -137,9 +135,10 @@ namespace ConnectFour
             }
         }
 
+
         private void ShowPlayerWonDialog()
         {
-            string player = calculatePlayer();
+            string player = CalculatePlayer();
             DialogResult dialogResult = MessageBox.Show("Would you like to play again?", String.Format("{0} wins!", player), MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -153,7 +152,8 @@ namespace ConnectFour
             }
         }
 
-        private string calculatePlayer()
+
+        private string CalculatePlayer()
         {
             string player;
             if (scene.IsPlayerOne)
@@ -175,7 +175,8 @@ namespace ConnectFour
             return player;
         }
 
-        private void changeStyle()
+
+        private void ChangeStyle()
         {
             if (!scene.IsPlayerOne)
             {
@@ -197,11 +198,13 @@ namespace ConnectFour
             }
         }
 
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             totalTimeTicks++;
-            tsslTotalTime.Text = formatTimeToText(totalTimeTicks);
+            tsslTotalTime.Text = FormatTimeToText(totalTimeTicks);
         }
+
 
         private void timer2_Tick(object sender, EventArgs e)
         {
@@ -211,8 +214,8 @@ namespace ConnectFour
                 if (turnTimeTicks == 0)
                 {
                     scene.turnTimeEnded();
-                    tsslPlayerName.Text = calculatePlayer();
-                    changeStyle();
+                    tsslPlayerName.Text = CalculatePlayer();
+                    ChangeStyle();
                     turnTimeTicks = turnTimeLimit;
                     if (withBot)
                     {
@@ -222,11 +225,11 @@ namespace ConnectFour
                         scene.AddCircle(new Point(0, 0));
                         Invalidate();
                         CheckWinner();
-                        tsslPlayerName.Text = calculatePlayer();
-                        changeStyle();
+                        tsslPlayerName.Text = CalculatePlayer();
+                        ChangeStyle();
                     }
                 }
-                formatTurnTimeText();
+                FormatTurnTimeText();
             }
             else
             {
@@ -234,29 +237,34 @@ namespace ConnectFour
             }
         }
 
-        private string formatTimeToText(int time)
+
+        private string FormatTimeToText(int time)
         {
             int minutes = time / 60;
             int seconds = time - minutes * 60;
             return String.Format("{0}:{1}", minutes.ToString("D2"), seconds.ToString("D2"));
         }
 
-        private void formatTurnTimeText()
+
+        private void FormatTurnTimeText()
         {
             tsslTurnTime.Text = "Turn timer: " + turnTimeTicks.ToString() + "s  | ";
             tsslTurnTime.Font = new Font("Unispace", 8);
         }
 
-        private void formatDefaultText()
+
+        private void FormatDefaultText()
         {
             tsslPlayerName.Font = new Font("Unispace", 8);
             tsslTotalTime.Font = new Font("Unispace", 8);
         }
 
+
         private void GameForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             parent.Show();
         }
+
 
         private void GameForm_MouseMove(object sender, MouseEventArgs e)
         {

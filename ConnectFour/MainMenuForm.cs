@@ -25,6 +25,7 @@ namespace ConnectFour
             WithBot = false;
             TurnTimeLimit = 0;
             rbPlayAgainstFriend.Checked = true;
+            ApplyFonts();
         }
 
         private void cbHasTurnTimeLimit_CheckedChanged(object sender, EventArgs e)
@@ -83,6 +84,13 @@ namespace ConnectFour
             }
 
             MessageBox.Show(fileContents, String.Format("How to Play?"), MessageBoxButtons.OK);
+        }
+
+        private void ApplyFonts()
+        {
+            welcomeLbl.Font = new Font("Unispace", 12);
+            btnHelp.Font = new Font("Unispace", 9);
+            startBtn.Font = new Font("Unispace", 10);
         }
     }
 }
