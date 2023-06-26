@@ -14,7 +14,9 @@ ___
 ## Упатство за користење
 ### Main Menu
 <!-- слика од Main Menu> -->
-<img src="https://github.com/Nikola-Jankovikj/VP_ConnectFour/assets/107946827/6a3c2129-0ebd-4311-ab46-691c230bce71" height="350" />
+<p align="center">
+  <img src="https://github.com/Nikola-Jankovikj/VP_ConnectFour/assets/107946827/6a3c2129-0ebd-4311-ab46-691c230bce71" height="350" />
+</p>
 
 Со започнување на апликацијата, најпрво се појавува **Main Menu** прозорец, каде играчот ги врши почетните поставки за играта:
 - противник: пријател или компјутер
@@ -25,13 +27,15 @@ ___
 Во горниот лев агол од прозорецот се наоѓа **Help** копче, кое нуди кратко упатство со правилата на играта.
 
 <!-- слика од How to play? -->
-<img src="https://github.com/Nikola-Jankovikj/VP_ConnectFour/assets/107946827/50bd5155-0c10-4717-a8dd-1fc6e90c5c92" height="400" />
+<p align="center">
+  <img src="https://github.com/Nikola-Jankovikj/VP_ConnectFour/assets/107946827/50bd5155-0c10-4717-a8dd-1fc6e90c5c92" height="400" />
+</p>
 
 Кога играчот е задоволен од внесените параметри може да ја започне играта со притискање на копчето **Start Game**.
 
 ### Game
 <!-- слики од Game со различни димензии -->
-<p float="left">
+<p float="left" align="center" >
   <img src="https://github.com/Nikola-Jankovikj/VP_ConnectFour/assets/107946827/ed92864c-bc34-4775-96d8-4dbb8083faf4" height="300" />
   <img src="https://github.com/Nikola-Jankovikj/VP_ConnectFour/assets/107946827/64b77c2d-3257-4e74-9e81-eae065c4c91e" height="300" />
 </p>
@@ -43,7 +47,7 @@ ___
 По завршување на играта се појавува **Message Box** каде е наведен победникот (или дека играта завршила нерешено) и е даден избор за започнување на нова игра или излез од играта со враќање на **Main Menu** прозорецот.
 
 <!-- слики од двата вида MessageBox -->
-<p float="left">
+<p float="left" align="center" >
   <img src="https://github.com/Nikola-Jankovikj/VP_ConnectFour/assets/107946827/2c5317c0-9208-4177-b738-29fca6cadf3e" height="125" />
   <img src="https://github.com/Nikola-Jankovikj/VP_ConnectFour/assets/107946827/e99a7730-6099-4ecd-9694-41da96100d25" height="125" />
 </p>
