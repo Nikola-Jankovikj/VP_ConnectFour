@@ -52,7 +52,6 @@ namespace ConnectFour
             }
             tsslEmptySpace.Text = String.Empty;
             tsslPlayerName.Text = CalculatePlayer();
-            FormatDefaultText();
             ChangeStyle();
         }
 
@@ -248,15 +247,8 @@ namespace ConnectFour
 
         private void FormatTurnTimeText()
         {
-            tsslTurnTime.Text = "Turn timer: " + turnTimeTicks.ToString() + "s  | ";
-            tsslTurnTime.Font = new Font("Unispace", 8);
-        }
-
-
-        private void FormatDefaultText()
-        {
-            tsslPlayerName.Font = new Font("Unispace", 8);
-            tsslTotalTime.Font = new Font("Unispace", 8);
+            tsslTurnTime.Text = "Turn timer: " + turnTimeTicks.ToString() + "s   | ";
+            tsslTurnTime.Font = new Font("Bahnschrift SemiBold", 9);
         }
 
 

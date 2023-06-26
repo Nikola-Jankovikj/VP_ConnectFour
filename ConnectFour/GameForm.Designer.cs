@@ -59,10 +59,10 @@ namespace ConnectFour
             // tsslTotalTime
             // 
             this.tsslTotalTime.BackColor = System.Drawing.Color.Gold;
-            this.tsslTotalTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsslTotalTime.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslTotalTime.ForeColor = System.Drawing.Color.Crimson;
             this.tsslTotalTime.Name = "tsslTotalTime";
-            this.tsslTotalTime.Size = new System.Drawing.Size(39, 17);
+            this.tsslTotalTime.Size = new System.Drawing.Size(38, 17);
             this.tsslTotalTime.Text = "00:00";
             // 
             // tsslEmptySpace
@@ -70,7 +70,7 @@ namespace ConnectFour
             this.tsslEmptySpace.BackColor = System.Drawing.Color.RoyalBlue;
             this.tsslEmptySpace.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslEmptySpace.Name = "tsslEmptySpace";
-            this.tsslEmptySpace.Size = new System.Drawing.Size(618, 17);
+            this.tsslEmptySpace.Size = new System.Drawing.Size(586, 17);
             this.tsslEmptySpace.Spring = true;
             // 
             // tsslTurnTime
@@ -81,10 +81,10 @@ namespace ConnectFour
             // tsslPlayerName
             // 
             this.tsslPlayerName.BackColor = System.Drawing.Color.Gold;
-            this.tsslPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsslPlayerName.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsslPlayerName.ForeColor = System.Drawing.Color.Crimson;
             this.tsslPlayerName.Name = "tsslPlayerName";
-            this.tsslPlayerName.Size = new System.Drawing.Size(128, 17);
+            this.tsslPlayerName.Size = new System.Drawing.Size(130, 17);
             this.tsslPlayerName.Text = "toolStripStatusLabel1";
             // 
             // timer1
