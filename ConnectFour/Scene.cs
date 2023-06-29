@@ -47,7 +47,7 @@ namespace ConnectFour
             {
                 Computer = new MiniMaxAlgorithm(8);
             }
-            
+            System.IO.File.WriteAllText("../../cache.txt", string.Empty);
         }
 
 

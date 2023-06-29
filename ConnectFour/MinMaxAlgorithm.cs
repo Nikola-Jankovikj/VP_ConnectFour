@@ -37,6 +37,7 @@ public class MiniMaxAlgorithm
         DEPTH = depth;
         DebugMode = debug;
         UseCache = useCache;
+        MoveCache.ResetCache(depth);
     }
 
     //Gets a list of the columns that are not full
@@ -175,13 +176,13 @@ public class MiniMaxAlgorithm
             return Evaluate(board);
         }
 
-        /*ReturnMove quickMove = GetQuickMove(board);
-        if (quickMove.Column != -1)
-        {
-            return quickMove.Score;
-        }*/
+            ReturnMove quickMove = GetQuickMove(board);
+            if (quickMove.Column != -1)
+            {
+                return quickMove.Score;
+            }
 
-        int bestScore = maximizingPlayer ? int.MinValue : int.MaxValue;
+            int bestScore = maximizingPlayer ? int.MinValue : int.MaxValue;
 
         List<int> validMoves = ValidMoves(ref board);
 

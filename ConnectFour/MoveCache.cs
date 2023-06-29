@@ -10,6 +10,18 @@ namespace ConnectFour
     public class MoveCache
     {
         private static Dictionary<string, ReturnMove> boardCache = new Dictionary<string, ReturnMove>();
+        private static int difficulty = 1;
+
+        public static void ResetCache(int depth)
+        {
+            if(difficulty != depth)
+            {
+                difficulty = depth;
+                boardCache = new Dictionary<string, ReturnMove>();
+            }
+        }
+
+
 
         //Hash function
         public static string HashBoard(Board board)
@@ -47,7 +59,7 @@ namespace ConnectFour
         {
             try
             {
-                using (StreamWriter sw = File.AppendText("cache.txt"))
+                using (StreamWriter sw = File.AppendText("../../cache.txt"))
                 {
                     sw.WriteLine(board + "," + move.Column + "," + move.Score + "," + move.Iterations);
                 }
